@@ -21,23 +21,26 @@ def thanks():
         vs2 = unquote(request.args['vs2'])
         vs3 = unquote(request.args['vs3'])
         vs4 = unquote(request.args['vs4'])
-        throw = throw.split(',')
-        arr_throw = ['throw']
-        i = 0
-        while i < len(throw):
-            arr_throw.append(throw[i])
-            i += 1
-        nishtak = nishtak.split(',')
-        arr_nishtak = ['nishtak']
-        i = 0
-        while i < len(nishtak):
-            arr_nishtak.append(nishtak[i])
-            i += 1
-        all_data_arr = [name,age,arr_throw,arr_nishtak,vs1,vs2,vs3,vs4]
-        file(str(all_data_arr)+'\n','data.txt')
-        return render_template('thanks.html', name=name)#переходит на страницу thanks
+        if len(name) == 0 or len(age) == 0 or len(throw) == 0 or len(nishtak) == 0:
+            return render_template('question.html')
+        else:
+            throw = throw.split(',')
+            arr_throw = ['throw']
+            i = 0
+            while i < len(throw):
+                arr_throw.append(throw[i])
+                i += 1
+            nishtak = nishtak.split(',')
+            arr_nishtak = ['nishtak']
+            i = 0
+            while i < len(nishtak):
+                arr_nishtak.append(nishtak[i])
+                i += 1
+            all_data_arr = [name,age,arr_throw,arr_nishtak,vs1,vs2,vs3,vs4]
+            file(str(all_data_arr)+'\n','data.txt')
+            return render_template('thanks.html', name=name)
     else:
-        return render_template('question.html')#если ничего не введено, остается на странице question
+        return render_template('question.html')
 
 @app.route('/jsn')
 def jsn():
@@ -201,4 +204,4 @@ def file(inf,name):
     f.close()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
