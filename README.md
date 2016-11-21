@@ -1,3 +1,3 @@
 # project2
-папка с html-файлами:
+Папка с html-файлами:
 https://yadi.sk/d/ci9oQjB1zAbUU
