@@ -191,9 +191,11 @@ def search():
 @app.route('/results')
 def result():
     if request.args:
-        age = unquote(request.args['age']) 
+        choose = unquote(request.args['choose']) 
         a,b,c,d,aa,bb,cc,dd,e,f,g,h,ee,ff,gg,hh,y,x,o,m,yy,xx,oo,mm = third2()
-        return render_template('results.html',age=age,a=a,b=b,c=c,d=d,aa=aa,bb=bb,cc=cc,dd=dd,e=e,f=f,g=g,h=h,ee=ee,ff=ff,gg=gg,\
+        s = first()
+        n = second() 
+        return render_template('results.html',choose=choose,s=s,n=n,a=a,b=b,c=c,d=d,aa=aa,bb=bb,cc=cc,dd=dd,e=e,f=f,g=g,h=h,ee=ee,ff=ff,gg=gg,\
                            hh=hh,y=y,x=x,o=o,m=m,yy=yy,xx=xx,oo=oo,mm=mm)
     else:
         return render_template('search.html')
