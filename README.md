@@ -5,3 +5,5 @@ https://yadi.sk/d/IU7WaBbVzFJx7
 https://github.com/panteleeva48/third.git
 # КОНТРОЛЬНАЯ РАБОТА
 https://github.com/panteleeva48/third.git
+# База данных
+https://github.com/panteleeva48/corpus.git
